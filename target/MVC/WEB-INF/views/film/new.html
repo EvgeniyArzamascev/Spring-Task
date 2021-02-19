@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>New Film</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/film/new}" th:object="${film}">
+
+    <label for="name">Enter name</label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <br/>
+    <label for="text">Enter Text</label>
+    <input type="text" th:field="*{text}" id="text"/>
+
+    <br/>
+    <input type="submit" value="Create"/>
+</form>
+
+</body>
+</html>

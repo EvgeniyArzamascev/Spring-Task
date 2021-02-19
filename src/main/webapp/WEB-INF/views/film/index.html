@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>All Film</title>
+</head>
+<body>
+
+<h1>All Film</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+
+    <p th:each="el : ${film}">
+        <tr>
+            <td th:text="${el.getID()}"></td>
+            <td><a th:href="@{/film/{id}(id=${el.getID()})}" th:text="${el.getName()}"></a></td>
+            <td> <a th:href="@{film/{id}/edit (id=${el.getID()}) }">Edit</a> </td>
+        </tr>
+    </p>
+</table>
+
+<br/>
+<a th:href="@{/film/new}">Create New Film</a>
+
+</body>
+</html>

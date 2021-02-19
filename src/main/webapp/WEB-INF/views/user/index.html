@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>All Users</title>
+</head>
+<body background="https://static-cse.canva.com/blob/194901/Rainbow-Gradient-Pink-and-Purple-Zoom-Virtual-Background.png">
+<h1>All Users</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Action</th>
+    </tr>
+
+    <p th:each="el : ${user}">
+        <tr>
+            <td th:text="${el.getID()}"></td>
+            <td><a th:href="@{/user/{id}(id=${el.getID()})}" th:text="${el.getName()}"></a></td>
+            <td>
+                <a th:href="@{/user/{id}/edit(id=${el.getID()})}">Edit</a>
+            </td>
+        </tr>
+    </p>
+</table>
+
+<hr/>
+<a th:href="@{/user/new}">New User</a>
+
+
+
+</body>
+</html>

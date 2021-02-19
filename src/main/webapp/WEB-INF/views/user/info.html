@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Info</title>
+</head>
+<body>
+
+<h1>INFO</h1>
+
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+
+    <p th:each="el : ${user}">
+        <tr>
+            <td th:text="${el.getID()}"></td>
+            <td th:text="${el.getName()}"></td>
+        </tr>
+    </p>
+</table>
+
+<br/>
+<a th:href="@{/user/{id}/addFilm (id=${user.getID()}) }">Take a Film</a>
+<br/>
+
+<form th:method="DELETE" th:action="@{/user/{id}(id=${user.getID()})}">
+    <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cinema</title>
+</head>
+<body>
+
+<h1>TEST</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>User ID</th>
+        <th>Film ID</th>
+        <th>User Name</th>
+        <th>Film Name</th>
+    </tr>
+    <p th:each="el : ${cinema}">
+        <tr>
+            <td th:text="${el.getID()}"> </td>
+            <td th:text="${el.getUserMapped().getID()}"> </td>
+            <td th:text="${el.getFilmMapped().getID()}"> </td>
+            <td th:text="${el.getUserMapped().getName()}"> </td>
+            <td th:text="${el.getFilmMapped().getName()}"> </td>
+        </tr>
+    </p>
+</table>
+
+
+</body>
+</html>

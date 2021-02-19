@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Take Film</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/user/{id}/addFilm (id=${user.getID()}) }" th:object="${user}">
+    <!--<label for="user">user ID</label>
+    <input name = "user_id" type="number"  id="user" th:field="*{ID}" />-->
+
+    <br/>
+    <label for="film">film ID</label>
+    <input name = "film_id" type="number"  id="film"/>
+
+
+    <br/>
+    <input type="submit" value="Take Film"/>
+
+
+</form>
+
+</body>
+</html>
